@@ -1,0 +1,25 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "discordbot test",
+  "main": "index.js",
+  "scripts": {
+    "test": "clear"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chriso004/Discord_Bot_Test.git"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "Chriso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chriso004/Discord_Bot_Test/issues"
+  },
+  "homepage": "https://github.com/Chriso004/Discord_Bot_Test#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}
