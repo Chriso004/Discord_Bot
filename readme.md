@@ -12,3 +12,6 @@ https://discord.com/api/oauth2/authorize?client_id=934976139200430091&permission
 
 ### 1.0.1
     주사위 기능 추가, 명령어 사용자 공개
+
+### 1.0.2
+    핑 확인 기능 추가, help 명령어 추가, 명령어 설명 수정

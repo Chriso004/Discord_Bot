@@ -9,7 +9,8 @@ module.exports = {
         .setName("핑")
         .setDescription("핑을 알려줍니다."),
     async execute(interaction) {
-        await interaction.reply(client.ping);
+        const ping = Date.now() - interaction.createdTimestamp;
+        await interaction.reply(`현재 핑은: ${ping}ms 입니다.`);
         if(process.env.autoDelete)
         {        
             await wait(15000);
