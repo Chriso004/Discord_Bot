@@ -6,13 +6,14 @@ dotenv.config();
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName("안녕")
-        .setDescription("코쟁이 봇이 반갑게 인사합니다."),
+        .setName("주사위")
+        .setDescription("행운을 빌어요!"),
     async execute(interaction) {
-        await interaction.reply("반가워!" + interaction.user.toString());
+        const random = Math.round((Math.random() * 100) + 1);
+        await interaction.reply(interaction.user.toString() + " 주사위! " + random);
         if(process.env.autoDelete)
         {
-            wait(15000);
+            await wait(15000);
             await interaction.deleteReply();
         }
     }
