@@ -1,25 +1,31 @@
 {
   "name": "discordbot",
   "version": "1.0.0",
-  "description": "discordbot test",
-  "main": "index.js",
+  "description": "discord bot",
+  "main": "app.js",
   "scripts": {
-    "test": "clear"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Chriso004/Discord_Bot_Test.git"
+    "url": "git+https://github.com/Chriso004/Discord_Bot.git"
   },
   "keywords": [
-    "bot"
+    "discord"
   ],
   "author": "Chriso",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Chriso004/Discord_Bot_Test/issues"
+    "url": "https://github.com/Chriso004/Discord_Bot/issues"
   },
-  "homepage": "https://github.com/Chriso004/Discord_Bot_Test#readme",
+  "homepage": "https://github.com/Chriso004/Discord_Bot#readme",
   "dependencies": {
+    "@discordjs/builders": "^0.12.0",
+    "@discordjs/rest": "^0.3.0",
+    "discord-api-types": "^0.26.1",
     "discord.js": "^13.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0"
   }
 }
