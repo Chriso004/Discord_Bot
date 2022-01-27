@@ -20,7 +20,7 @@ client.once('ready', () => {
         const command = client.commands.get(interaction.commandName.toLocaleLowerCase());
         
         if (!command) return;
-    
+    interaction.channel.bulkDelete()
         try {
             await command.execute(interaction);
         } catch (error) {

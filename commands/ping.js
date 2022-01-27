@@ -13,7 +13,7 @@ module.exports = {
         await interaction.reply(`현재 핑은: ${ping}ms 입니다.`);
         if(process.env.autoDelete)
         {        
-            await wait(15000);
+            await wait(30000);
             await interaction.deleteReply();
         }
     }

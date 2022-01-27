@@ -13,7 +13,7 @@ module.exports = {
         await interaction.reply(interaction.user.toString() + " 주사위! " + random);
         if(process.env.autoDelete)
         {
-            await wait(15000);
+            await wait(30000);
             await interaction.deleteReply();
         }
     }

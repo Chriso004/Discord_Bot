@@ -15,3 +15,6 @@ https://discord.com/api/oauth2/authorize?client_id=934976139200430091&permission
 
 ### 1.0.2
     핑 확인 기능 추가, help 명령어 추가, 명령어 설명 수정
+
+### 1.0.3
+    메세지 삭제 기능 추가

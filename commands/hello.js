@@ -12,7 +12,7 @@ module.exports = {
         await interaction.reply("반가워!" + interaction.user.toString());
         if(process.env.autoDelete)
         {
-            wait(15000);
+            wait(30000);
             await interaction.deleteReply();
         }
     }
