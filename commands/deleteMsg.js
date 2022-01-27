@@ -16,7 +16,7 @@ module.exports = {
         }),
     async execute(interaction) {
         const num = interaction.options.getInteger("num");
-        await interaction.channel.bulkDelete(num);
+        await interaction.channel.bulkDelete(num, true);
         await interaction.reply(`${num}개의 메세지가 삭제되었습니다.`)
         if(process.env.autoDelete)
         {

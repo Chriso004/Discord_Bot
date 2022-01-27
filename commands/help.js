@@ -7,7 +7,7 @@ module.exports = {
         .setDescription("명령어 목록입니다."),
     async execute(interaction) {
         const commandList = getCommands(interaction)
-        await interaction.user.send(commandList);
+        return await interaction.user.send(commandList);
     }
 }
 
