@@ -11,29 +11,29 @@ module.exports = {
                 .setDescription("단어나 문장을 입력하세요.")
                 .setRequired(true);
         }),
-        async execute(interaction) {
-            const text = interaction.options.getString("text");
-            const language = "ko"
-            const result = translateText(text, language);
-            result.then(async result => {
-                await interaction.reply(`${text} => ${result}`);
-                console.log(isKor(text));
-            })
-        }
+    async execute = interaction => {
+        const text = interaction.options.getString("text");
+        const language = "ko";
+        const result = translateText(text, language);
+        result.then(async result => {
+            await interaction.reply(`${text} => ${result}`);
+            console.log(isKor(text));
+        })
+    }
 }
 
-async function translateText(text, language = "ko") {
-    if(isKor(text)) language = "en";
+const translateText = (text, language = "ko") => {
+    if (isKor(text)) language = "en";
     try {
         const result = await translate(text, language);
         return result.text;
     }
-    catch(error) {
+    catch (error) {
         console.log(error);
     }
 }
 
-function isKor(str) {
+const isKor = str => {
     const regExp = /[ㄱ-ㅎㅏ-ㅣ가-힣]/g;
     return regExp.test(str) == true ? true : false;
 }

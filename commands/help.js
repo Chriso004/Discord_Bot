@@ -6,13 +6,13 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName("help")
         .setDescription("명령어 목록입니다."),
-    async execute(interaction) {
+    async execute = interaction => {
         const commandList = getCommands();
         await interaction.user.send({ embeds: [commandList] });
     }
 }
 
-function getCommands() {
+const getCommands = () => {
     const commands = {};
     const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 

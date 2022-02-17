@@ -2,14 +2,11 @@
   "name": "discordbot",
   "version": "1.0.0",
   "description": "discord_bot",
-  "main": "app.js",
+  "main": "app.ts",
   "scripts": {
     "test": "clean"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Chriso004/Discord_Bot.git"
-  },
+  "repository": "git+https://github.com/Chriso004/Discord_Bot.git",
   "keywords": [
     "bot"
   ],

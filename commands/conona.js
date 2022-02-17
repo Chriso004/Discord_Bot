@@ -1,18 +1,18 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-const { SlashCommandBuilder, SlashCommandSubcommandGroupBuilder } = require("@discordjs/builders");
+const { SlashCommandBuilder } = require("@discordjs/builders");
 const { MessageEmbed, MessageAttachment } = require("discord.js");
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("코로나")
         .setDescription("코로나 일일 확진자 수를 알려줍니다."),
-    async execute(interaction) {
+    async execute = interaction => {
         const dsTable = getData();
         dsTable.then(async dsTable => {
-            const messageForm = buildMessageForm(dsTable);
+            const message = makeMessageEmbed(dsTable);
             const img = new MessageAttachment("./src/img/circle.jpg");
-            await interaction.reply({ embeds: [messageForm], files:[img] });
+            await interaction.reply({ embeds: [message], files:[img] });
         })
             .catch(error => {
                 console.log(error);
@@ -20,7 +20,7 @@ module.exports = {
     }
 }
 
-function buildMessageForm(dsTable) {
+const makeMessageEmbed = dsTable => {
     const message = new MessageEmbed()
         .setColor("#0099ff")
         .setTitle("코로나 확진자 수")
@@ -44,20 +44,20 @@ function buildMessageForm(dsTable) {
     return message;
 }
 
-async function getResponse() {
+const getResponse = async () => {
     return await axios.get("http://ncov.mohw.go.kr/")
         .catch(error => {
             console.log(error.response);
         })
 }
 
-async function getData() {
+const getData = async () => {
     return getResponse().then(response => {
         const ds = []
         const $ = cheerio.load(response.data);
 
         $(".occurrenceStatus .ds_table tbody tr").map(function (index, element) {
-            dsTable = {}
+            const dsTable = {}
             dsTable["사망"] = String($(element).find("td:nth-of-type(1)").text());
             dsTable["위중증"] = String($(element).find("td:nth-of-type(2)").text());
             dsTable["신규입원"] = String($(element).find("td:nth-of-type(3)").text());
